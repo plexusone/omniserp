@@ -8,6 +8,23 @@
 [![Visualization][viz-svg]][viz-url]
 [![License][license-svg]][license-url]
 
+ [go-ci-svg]: https://github.com/plexusone/omniserp/actions/workflows/go-ci.yaml/badge.svg?branch=main
+ [go-ci-url]: https://github.com/plexusone/omniserp/actions/workflows/go-ci.yaml
+ [go-lint-svg]: https://github.com/plexusone/omniserp/actions/workflows/go-lint.yaml/badge.svg?branch=main
+ [go-lint-url]: https://github.com/plexusone/omniserp/actions/workflows/go-lint.yaml
+ [go-sast-svg]: https://github.com/plexusone/omniserp/actions/workflows/go-sast-codeql.yaml/badge.svg?branch=main
+ [go-sast-url]: https://github.com/plexusone/omniserp/actions/workflows/go-sast-codeql.yaml
+ [goreport-svg]: https://goreportcard.com/badge/github.com/plexusone/omniserp
+ [goreport-url]: https://goreportcard.com/report/github.com/plexusone/omniserp
+ [docs-godoc-svg]: https://pkg.go.dev/badge/github.com/plexusone/omniserp
+ [docs-godoc-url]: https://pkg.go.dev/github.com/plexusone/omniserp
+ [viz-svg]: https://img.shields.io/badge/visualizaton-Go-blue.svg
+ [viz-url]: https://mango-dune-07a8b7110.1.azurestaticapps.net/?repo=plexusone%2Fomniserp
+ [loc-svg]: https://tokei.rs/b1/github/plexusone/omniserp
+ [repo-url]: https://github.com/plexusone/omniserp
+ [license-svg]: https://img.shields.io/badge/license-MIT-blue.svg
+ [license-url]: https://github.com/plexusone/omniserp/blob/master/LICENSE
+
 A modular, plugin-based search engine abstraction package for Go that provides a unified interface for multiple search engines.
 
 ## Overview
@@ -683,20 +700,3 @@ go test -v ./client
 ## Thread Safety
 
 The registry is safe for concurrent read operations. Engine implementations should be thread-safe for concurrent use.
-
- [go-ci-svg]: https://github.com/plexusone/omniserp/actions/workflows/go-ci.yaml/badge.svg?branch=main
- [go-ci-url]: https://github.com/plexusone/omniserp/actions/workflows/go-ci.yaml
- [go-lint-svg]: https://github.com/plexusone/omniserp/actions/workflows/go-lint.yaml/badge.svg?branch=main
- [go-lint-url]: https://github.com/plexusone/omniserp/actions/workflows/go-lint.yaml
- [go-sast-svg]: https://github.com/plexusone/omniserp/actions/workflows/go-sast-codeql.yaml/badge.svg?branch=main
- [go-sast-url]: https://github.com/plexusone/omniserp/actions/workflows/go-sast-codeql.yaml
- [goreport-svg]: https://goreportcard.com/badge/github.com/plexusone/omniserp
- [goreport-url]: https://goreportcard.com/report/github.com/plexusone/omniserp
- [docs-godoc-svg]: https://pkg.go.dev/badge/github.com/plexusone/omniserp
- [docs-godoc-url]: https://pkg.go.dev/github.com/plexusone/omniserp
- [viz-svg]: https://img.shields.io/badge/visualizaton-Go-blue.svg
- [viz-url]: https://mango-dune-07a8b7110.1.azurestaticapps.net/?repo=plexusone%2Fomniserp
- [loc-svg]: https://tokei.rs/b1/github/plexusone/omniserp
- [repo-url]: https://github.com/plexusone/omniserp
- [license-svg]: https://img.shields.io/badge/license-MIT-blue.svg
- [license-url]: https://github.com/plexusone/omniserp/blob/master/LICENSE

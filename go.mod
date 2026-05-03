@@ -5,7 +5,7 @@ go 1.25.5
 require (
 	github.com/jessevdk/go-flags v1.6.1
 	github.com/modelcontextprotocol/go-sdk v1.6.0
-	github.com/plexusone/omnivault-keyring v0.2.0
+	github.com/plexusone/omni-keyring v0.3.0
 	github.com/plexusone/vaultguard v0.3.0
 )
 

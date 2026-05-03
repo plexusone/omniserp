@@ -38,7 +38,7 @@ import (
 	"os"
 
 	"github.com/modelcontextprotocol/go-sdk/mcp"
-	keyring "github.com/plexusone/omnivault-keyring"
+	keyring "github.com/plexusone/omni-keyring/omnivault"
 	"github.com/plexusone/vaultguard"
 
 	"github.com/plexusone/omniserp"

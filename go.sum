@@ -25,10 +25,10 @@ github.com/mattn/go-runewidth v0.0.23 h1:7ykA0T0jkPpzSvMS5i9uoNn2Xy3R383f9HDx3Ry
 github.com/mattn/go-runewidth v0.0.23/go.mod h1:XBkDxAl56ILZc9knddidhrOlY5R/pDhgLpndooCuJAs=
 github.com/modelcontextprotocol/go-sdk v1.6.0 h1:PPLS3kn7WtOEnR+Af4X5H96SG0qSab8R/ZQT/HkhPkY=
 github.com/modelcontextprotocol/go-sdk v1.6.0/go.mod h1:kzm3kzFL1/+AziGOE0nUs3gvPoNxMCvkxokMkuFapXQ=
+github.com/plexusone/omni-keyring v0.3.0 h1:rFL56t/MuI5WQYxQ9/Qjd1YMvvrIZpJW83q+YcCc5js=
+github.com/plexusone/omni-keyring v0.3.0/go.mod h1:WoySwVkqhVIC6v42Mnfls0AV89yUB2RWrZTx+uHIzik=
 github.com/plexusone/omnivault v0.3.0 h1:58dKSzhGVTO786kdL8zOkfTrqND+0qqwvsY8o6GrGd0=
 github.com/plexusone/omnivault v0.3.0/go.mod h1:rQc0Tb6IchaJeY/uB076VYKQHwyL+cwaYYdiFkuKhjA=
-github.com/plexusone/omnivault-keyring v0.2.0 h1:yuPWLwKIHYXrsulRLgHKKiEP7KwNi3OXkjfYJyyWI+o=
-github.com/plexusone/omnivault-keyring v0.2.0/go.mod h1:iEE9ga4f9jpAhgntE4EDupHKs0tBmNHyV5mSEjx9Sjg=
 github.com/plexusone/posture v0.3.0 h1:NsaufOi5XiTzuP2hlD8/ohp3jtLfOyGgKK4z4TsXdbY=
 github.com/plexusone/posture v0.3.0/go.mod h1:z4WsvCbzGusLzJGBFZAApp3sV0juEGb1FoB4lLre9K4=
 github.com/plexusone/vaultguard v0.3.0 h1:auQ3FOvlBDzFZEDrJlaEfibnJQQd900VrvrMYeoGq8s=

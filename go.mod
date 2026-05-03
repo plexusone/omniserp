@@ -4,7 +4,7 @@ go 1.25.5
 
 require (
 	github.com/jessevdk/go-flags v1.6.1
-	github.com/modelcontextprotocol/go-sdk v1.5.0
+	github.com/modelcontextprotocol/go-sdk v1.6.0
 	github.com/plexusone/omnivault-keyring v0.2.0
 	github.com/plexusone/vaultguard v0.3.0
 )
@@ -16,7 +16,7 @@ require (
 	github.com/ebitengine/purego v0.10.0 // indirect
 	github.com/go-ole/go-ole v1.3.0 // indirect
 	github.com/godbus/dbus/v5 v5.2.2 // indirect
-	github.com/google/jsonschema-go v0.4.2 // indirect
+	github.com/google/jsonschema-go v0.4.3 // indirect
 	github.com/lufia/plan9stats v0.0.0-20260216142805-b3301c5f2a88 // indirect
 	github.com/mattn/go-runewidth v0.0.20 // indirect
 	github.com/plexusone/omnivault v0.3.0 // indirect

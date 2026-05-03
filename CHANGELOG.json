@@ -6,6 +6,13 @@
   "commitConvention": "conventional",
   "releases": [
     {
+      "version": "v0.8.1",
+      "date": "2026-05-03",
+      "changed": [
+        { "description": "Migrate keyring dependency from `omnivault-keyring` to `omni-keyring/omnivault` v0.3.0" }
+      ]
+    },
+    {
       "version": "v0.8.0",
       "date": "2026-03-01",
       "highlights": [

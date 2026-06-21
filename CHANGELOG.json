@@ -6,6 +6,29 @@
   "commitConvention": "conventional",
   "releases": [
     {
+      "version": "v0.9.0",
+      "date": "2026-06-20",
+      "highlights": [
+        { "description": "Two new search engine backends: Brave Search and Exa.ai" },
+        { "description": "OmniSkill adapter for agent integration" }
+      ],
+      "added": [
+        { "description": "Brave Search engine with web, news, images, videos, and autocomplete support", "commit": "dd94082" },
+        { "description": "Exa.ai neural search engine with multiple search modes (auto, instant, fast, deep)", "commit": "2558bee" },
+        { "description": "OmniSkill adapter package for omniskill-compatible agents", "commit": "80af1ec" },
+        { "description": "Content extraction and highlights support in Exa.ai responses", "commit": "2558bee" }
+      ],
+      "changed": [
+        { "description": "Upgrade Go version to 1.26.0", "commit": "80af1ec" },
+        { "description": "Update omnivault dependency to v0.5.0", "commit": "80af1ec" }
+      ],
+      "documentation": [
+        { "description": "Add Brave Search and Exa.ai to engine overview documentation", "commit": "cb931a2" },
+        { "description": "Update feature comparison table with all four engines", "commit": "cb931a2" },
+        { "description": "Update README with new engines and environment variables", "commit": "1a5f4af" }
+      ]
+    },
+    {
       "version": "v0.8.1",
       "date": "2026-05-03",
       "changed": [

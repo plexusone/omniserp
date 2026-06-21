@@ -11,7 +11,7 @@ The `omniserp` package provides:
 - **Capability Checking**: Automatic validation of operation support across different backends
 - **Unified Interface**: Common `Engine` interface for all search providers
 - **Plugin Architecture**: Easy addition of new search engines
-- **Multiple Providers**: Built-in support for Serper and SerpAPI
+- **Multiple Providers**: Built-in support for Serper, SerpAPI, Brave Search, and Exa.ai
 - **Type Safety**: Structured parameter and result types
 - **Registry System**: Automatic discovery and management of engines
 - **MCP Server**: Model Context Protocol server for AI integration with optional secure credentials
@@ -60,7 +60,9 @@ omniserp/
 ├── client/                 # Search engine client implementations
 │   ├── client.go           # Unified Client SDK with capability checking
 │   ├── serper/             # Serper.dev implementation
-│   └── serpapi/            # SerpAPI implementation
+│   ├── serpapi/            # SerpAPI implementation
+│   ├── brave/              # Brave Search API
+│   └── exa/                # Exa.ai neural search
 ├── cmd/                    # Executable applications
 │   ├── mcp-omniserp/       # MCP server for AI integration
 │   └── omniserp/           # CLI tool
@@ -83,9 +85,22 @@ go get github.com/plexusone/omniserp@latest
 
 ```bash
 # Choose which engine to use (optional, defaults to "serper")
-export SEARCH_ENGINE="serper"  # or "serpapi"
+export SEARCH_ENGINE="serper"  # or "serpapi", "brave", "exa"
 
 # API keys for respective engines
 export SERPER_API_KEY="your_serper_key"
 export SERPAPI_API_KEY="your_serpapi_key"
+export BRAVE_API_KEY="your_brave_key"
+export EXA_API_KEY="your_exa_key"
 ```
+
+## Supported Engines
+
+| Engine | Best For | Key Features |
+|--------|----------|--------------|
+| **Serper** | Full SERP data | All 12 search types, Lens support |
+| **SerpAPI** | Google scraping | Reliable, well-documented |
+| **Brave** | Privacy, speed | Free tier, summarizer, goggles |
+| **Exa** | LLM/AI apps | Neural search, content extraction |
+
+See [Engines Overview](engines/overview.md) for detailed feature comparison.

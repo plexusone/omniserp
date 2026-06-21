@@ -628,6 +628,39 @@
   
 </li>
         
+          <li class="md-nav__item">
+  <a href="#brave-search" class="md-nav__link">
+    <span class="md-ellipsis">
+      Brave Search
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#exaai" class="md-nav__link">
+    <span class="md-ellipsis">
+      Exa.ai
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Exa.ai">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#exa-features" class="md-nav__link">
+    <span class="md-ellipsis">
+      Exa Features
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
       </ul>
     </nav>
   
@@ -674,6 +707,15 @@
   <a href="#programmatically" class="md-nav__link">
     <span class="md-ellipsis">
       Programmatically
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#engine-selection-guide" class="md-nav__link">
+    <span class="md-ellipsis">
+      Engine Selection Guide
     </span>
   </a>
   
@@ -981,6 +1023,39 @@
   
 </li>
         
+          <li class="md-nav__item">
+  <a href="#brave-search" class="md-nav__link">
+    <span class="md-ellipsis">
+      Brave Search
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#exaai" class="md-nav__link">
+    <span class="md-ellipsis">
+      Exa.ai
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Exa.ai">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#exa-features" class="md-nav__link">
+    <span class="md-ellipsis">
+      Exa Features
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
       </ul>
     </nav>
   
@@ -1027,6 +1102,15 @@
   <a href="#programmatically" class="md-nav__link">
     <span class="md-ellipsis">
       Programmatically
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#engine-selection-guide" class="md-nav__link">
+    <span class="md-ellipsis">
+      Engine Selection Guide
     </span>
   </a>
   
@@ -1086,6 +1170,107 @@
 <p class="admonition-title">Note</p>
 <p><code>SearchLens()</code> is not supported by SerpAPI and will return <code>ErrOperationNotSupported</code></p>
 </div>
+<h3 id="brave-search">Brave Search<a class="headerlink" href="#brave-search" title="Permanent link">&para;</a></h3>
+<ul>
+<li><strong>Package</strong>: <code>github.com/plexusone/omniserp/client/brave</code></li>
+<li><strong>Environment Variable</strong>: <code>BRAVE_API_KEY</code></li>
+<li><strong>Website</strong>: <a href="https://brave.com/search/api">brave.com/search/api</a></li>
+<li><strong>Supported Operations</strong>: Web, News, Images, Videos, Autocomplete</li>
+</ul>
+<p>Brave Search provides privacy-focused search results with excellent coverage and fast response times. It includes:</p>
+<ul>
+<li><strong>Goggles</strong> - Customizable result filtering</li>
+<li><strong>Summarizer</strong> - AI-powered result summaries</li>
+<li><strong>Discussions</strong> - Forum and community results</li>
+</ul>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-0-1" name="__codelineno-0-1" href="#__codelineno-0-1"></a><span class="kn">import</span><span class="w"> </span><span class="s">&quot;github.com/plexusone/omniserp/client/brave&quot;</span>
+<a id="__codelineno-0-2" name="__codelineno-0-2" href="#__codelineno-0-2"></a>
+<a id="__codelineno-0-3" name="__codelineno-0-3" href="#__codelineno-0-3"></a><span class="nx">engine</span><span class="w"> </span><span class="o">:=</span><span class="w"> </span><span class="nx">brave</span><span class="p">.</span><span class="nx">New</span><span class="p">(</span><span class="nx">brave</span><span class="p">.</span><span class="nx">Config</span><span class="p">{</span>
+<a id="__codelineno-0-4" name="__codelineno-0-4" href="#__codelineno-0-4"></a><span class="w">    </span><span class="nx">APIKey</span><span class="p">:</span><span class="w"> </span><span class="nx">os</span><span class="p">.</span><span class="nx">Getenv</span><span class="p">(</span><span class="s">&quot;BRAVE_API_KEY&quot;</span><span class="p">),</span>
+<a id="__codelineno-0-5" name="__codelineno-0-5" href="#__codelineno-0-5"></a><span class="p">})</span>
+<a id="__codelineno-0-6" name="__codelineno-0-6" href="#__codelineno-0-6"></a>
+<a id="__codelineno-0-7" name="__codelineno-0-7" href="#__codelineno-0-7"></a><span class="c1">// Web search</span>
+<a id="__codelineno-0-8" name="__codelineno-0-8" href="#__codelineno-0-8"></a><span class="nx">result</span><span class="p">,</span><span class="w"> </span><span class="nx">err</span><span class="w"> </span><span class="o">:=</span><span class="w"> </span><span class="nx">engine</span><span class="p">.</span><span class="nx">Search</span><span class="p">(</span><span class="nx">ctx</span><span class="p">,</span><span class="w"> </span><span class="nx">client</span><span class="p">.</span><span class="nx">SearchParams</span><span class="p">{</span>
+<a id="__codelineno-0-9" name="__codelineno-0-9" href="#__codelineno-0-9"></a><span class="w">    </span><span class="nx">Query</span><span class="p">:</span><span class="w">      </span><span class="s">&quot;golang concurrency patterns&quot;</span><span class="p">,</span>
+<a id="__codelineno-0-10" name="__codelineno-0-10" href="#__codelineno-0-10"></a><span class="w">    </span><span class="nx">NumResults</span><span class="p">:</span><span class="w"> </span><span class="mi">10</span><span class="p">,</span>
+<a id="__codelineno-0-11" name="__codelineno-0-11" href="#__codelineno-0-11"></a><span class="p">})</span>
+<a id="__codelineno-0-12" name="__codelineno-0-12" href="#__codelineno-0-12"></a>
+<a id="__codelineno-0-13" name="__codelineno-0-13" href="#__codelineno-0-13"></a><span class="c1">// News search</span>
+<a id="__codelineno-0-14" name="__codelineno-0-14" href="#__codelineno-0-14"></a><span class="nx">news</span><span class="p">,</span><span class="w"> </span><span class="nx">err</span><span class="w"> </span><span class="o">:=</span><span class="w"> </span><span class="nx">engine</span><span class="p">.</span><span class="nx">SearchNews</span><span class="p">(</span><span class="nx">ctx</span><span class="p">,</span><span class="w"> </span><span class="nx">client</span><span class="p">.</span><span class="nx">SearchParams</span><span class="p">{</span>
+<a id="__codelineno-0-15" name="__codelineno-0-15" href="#__codelineno-0-15"></a><span class="w">    </span><span class="nx">Query</span><span class="p">:</span><span class="w"> </span><span class="s">&quot;tech news&quot;</span><span class="p">,</span>
+<a id="__codelineno-0-16" name="__codelineno-0-16" href="#__codelineno-0-16"></a><span class="p">})</span>
+</code></pre></div>
+<h3 id="exaai">Exa.ai<a class="headerlink" href="#exaai" title="Permanent link">&para;</a></h3>
+<ul>
+<li><strong>Package</strong>: <code>github.com/plexusone/omniserp/client/exa</code></li>
+<li><strong>Environment Variable</strong>: <code>EXA_API_KEY</code></li>
+<li><strong>Website</strong>: <a href="https://exa.ai">exa.ai</a></li>
+<li><strong>Supported Operations</strong>: Web Search (multiple modes)</li>
+</ul>
+<p>Exa.ai provides neural search optimized for LLM applications with multiple search modes:</p>
+<table>
+<thead>
+<tr>
+<th>Mode</th>
+<th>Description</th>
+<th>Use Case</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>auto</code></td>
+<td>Automatic mode selection</td>
+<td>General purpose</td>
+</tr>
+<tr>
+<td><code>instant</code></td>
+<td>Fastest results</td>
+<td>Real-time applications</td>
+</tr>
+<tr>
+<td><code>fast</code></td>
+<td>Balanced speed/quality</td>
+<td>Most queries</td>
+</tr>
+<tr>
+<td><code>deep</code></td>
+<td>High-quality results</td>
+<td>Research tasks</td>
+</tr>
+<tr>
+<td><code>deep-lite</code></td>
+<td>Deep with lower latency</td>
+<td>Time-sensitive research</td>
+</tr>
+<tr>
+<td><code>deep-reasoning</code></td>
+<td>Best quality</td>
+<td>Complex queries</td>
+</tr>
+</tbody>
+</table>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-1-1" name="__codelineno-1-1" href="#__codelineno-1-1"></a><span class="kn">import</span><span class="w"> </span><span class="s">&quot;github.com/plexusone/omniserp/client/exa&quot;</span>
+<a id="__codelineno-1-2" name="__codelineno-1-2" href="#__codelineno-1-2"></a>
+<a id="__codelineno-1-3" name="__codelineno-1-3" href="#__codelineno-1-3"></a><span class="nx">engine</span><span class="w"> </span><span class="o">:=</span><span class="w"> </span><span class="nx">exa</span><span class="p">.</span><span class="nx">New</span><span class="p">(</span><span class="nx">exa</span><span class="p">.</span><span class="nx">Config</span><span class="p">{</span>
+<a id="__codelineno-1-4" name="__codelineno-1-4" href="#__codelineno-1-4"></a><span class="w">    </span><span class="nx">APIKey</span><span class="p">:</span><span class="w"> </span><span class="nx">os</span><span class="p">.</span><span class="nx">Getenv</span><span class="p">(</span><span class="s">&quot;EXA_API_KEY&quot;</span><span class="p">),</span>
+<a id="__codelineno-1-5" name="__codelineno-1-5" href="#__codelineno-1-5"></a><span class="p">})</span>
+<a id="__codelineno-1-6" name="__codelineno-1-6" href="#__codelineno-1-6"></a>
+<a id="__codelineno-1-7" name="__codelineno-1-7" href="#__codelineno-1-7"></a><span class="c1">// Neural search with deep mode</span>
+<a id="__codelineno-1-8" name="__codelineno-1-8" href="#__codelineno-1-8"></a><span class="nx">result</span><span class="p">,</span><span class="w"> </span><span class="nx">err</span><span class="w"> </span><span class="o">:=</span><span class="w"> </span><span class="nx">engine</span><span class="p">.</span><span class="nx">Search</span><span class="p">(</span><span class="nx">ctx</span><span class="p">,</span><span class="w"> </span><span class="nx">client</span><span class="p">.</span><span class="nx">SearchParams</span><span class="p">{</span>
+<a id="__codelineno-1-9" name="__codelineno-1-9" href="#__codelineno-1-9"></a><span class="w">    </span><span class="nx">Query</span><span class="p">:</span><span class="w">      </span><span class="s">&quot;latest AI research papers 2026&quot;</span><span class="p">,</span>
+<a id="__codelineno-1-10" name="__codelineno-1-10" href="#__codelineno-1-10"></a><span class="w">    </span><span class="nx">NumResults</span><span class="p">:</span><span class="w"> </span><span class="mi">10</span><span class="p">,</span>
+<a id="__codelineno-1-11" name="__codelineno-1-11" href="#__codelineno-1-11"></a><span class="w">    </span><span class="nx">Options</span><span class="p">:</span><span class="w"> </span><span class="kd">map</span><span class="p">[</span><span class="kt">string</span><span class="p">]</span><span class="kt">any</span><span class="p">{</span>
+<a id="__codelineno-1-12" name="__codelineno-1-12" href="#__codelineno-1-12"></a><span class="w">        </span><span class="s">&quot;mode&quot;</span><span class="p">:</span><span class="w"> </span><span class="s">&quot;deep&quot;</span><span class="p">,</span>
+<a id="__codelineno-1-13" name="__codelineno-1-13" href="#__codelineno-1-13"></a><span class="w">    </span><span class="p">},</span>
+<a id="__codelineno-1-14" name="__codelineno-1-14" href="#__codelineno-1-14"></a><span class="p">})</span>
+</code></pre></div>
+<h4 id="exa-features">Exa Features<a class="headerlink" href="#exa-features" title="Permanent link">&para;</a></h4>
+<ul>
+<li><strong>Contents Extraction</strong> - Get full page content, not just snippets</li>
+<li><strong>Highlights</strong> - Key passages relevant to query</li>
+<li><strong>Autoprompt</strong> - Automatic query optimization</li>
+<li><strong>Date Filtering</strong> - Filter by publication date</li>
+</ul>
 <h2 id="feature-comparison">Feature Comparison<a class="headerlink" href="#feature-comparison" title="Permanent link">&para;</a></h2>
 <table>
 <thead>
@@ -1093,6 +1278,8 @@
 <th>Operation</th>
 <th style="text-align: center;">Serper</th>
 <th style="text-align: center;">SerpAPI</th>
+<th style="text-align: center;">Brave</th>
+<th style="text-align: center;">Exa</th>
 </tr>
 </thead>
 <tbody>
@@ -1100,117 +1287,194 @@
 <td>Web Search</td>
 <td style="text-align: center;">✓</td>
 <td style="text-align: center;">✓</td>
+<td style="text-align: center;">✓</td>
+<td style="text-align: center;">✓</td>
 </tr>
 <tr>
 <td>News Search</td>
 <td style="text-align: center;">✓</td>
 <td style="text-align: center;">✓</td>
+<td style="text-align: center;">✓</td>
+<td style="text-align: center;">✗</td>
 </tr>
 <tr>
 <td>Image Search</td>
 <td style="text-align: center;">✓</td>
 <td style="text-align: center;">✓</td>
+<td style="text-align: center;">✓</td>
+<td style="text-align: center;">✗</td>
 </tr>
 <tr>
 <td>Video Search</td>
 <td style="text-align: center;">✓</td>
 <td style="text-align: center;">✓</td>
+<td style="text-align: center;">✓</td>
+<td style="text-align: center;">✗</td>
 </tr>
 <tr>
 <td>Places Search</td>
 <td style="text-align: center;">✓</td>
 <td style="text-align: center;">✓</td>
+<td style="text-align: center;">✗</td>
+<td style="text-align: center;">✗</td>
 </tr>
 <tr>
 <td>Maps Search</td>
 <td style="text-align: center;">✓</td>
 <td style="text-align: center;">✓</td>
+<td style="text-align: center;">✗</td>
+<td style="text-align: center;">✗</td>
 </tr>
 <tr>
 <td>Reviews Search</td>
 <td style="text-align: center;">✓</td>
 <td style="text-align: center;">✓</td>
+<td style="text-align: center;">✗</td>
+<td style="text-align: center;">✗</td>
 </tr>
 <tr>
 <td>Shopping Search</td>
 <td style="text-align: center;">✓</td>
 <td style="text-align: center;">✓</td>
+<td style="text-align: center;">✗</td>
+<td style="text-align: center;">✗</td>
 </tr>
 <tr>
 <td>Scholar Search</td>
 <td style="text-align: center;">✓</td>
 <td style="text-align: center;">✓</td>
+<td style="text-align: center;">✗</td>
+<td style="text-align: center;">✗</td>
 </tr>
 <tr>
-<td><strong>Lens Search</strong></td>
-<td style="text-align: center;"><strong>✓</strong></td>
-<td style="text-align: center;"><strong>✗</strong></td>
+<td>Lens Search</td>
+<td style="text-align: center;">✓</td>
+<td style="text-align: center;">✗</td>
+<td style="text-align: center;">✗</td>
+<td style="text-align: center;">✗</td>
 </tr>
 <tr>
 <td>Autocomplete</td>
 <td style="text-align: center;">✓</td>
 <td style="text-align: center;">✓</td>
+<td style="text-align: center;">✓</td>
+<td style="text-align: center;">✗</td>
 </tr>
 <tr>
 <td>Webpage Scrape</td>
 <td style="text-align: center;">✓</td>
 <td style="text-align: center;">✓</td>
+<td style="text-align: center;">✗</td>
+<td style="text-align: center;">✗</td>
+</tr>
+<tr>
+<td><strong>Neural Search</strong></td>
+<td style="text-align: center;">✗</td>
+<td style="text-align: center;">✗</td>
+<td style="text-align: center;">✗</td>
+<td style="text-align: center;"><strong>✓</strong></td>
+</tr>
+<tr>
+<td><strong>Content Extract</strong></td>
+<td style="text-align: center;">✗</td>
+<td style="text-align: center;">✗</td>
+<td style="text-align: center;">✗</td>
+<td style="text-align: center;"><strong>✓</strong></td>
+</tr>
+<tr>
+<td><strong>Summarizer</strong></td>
+<td style="text-align: center;">✗</td>
+<td style="text-align: center;">✗</td>
+<td style="text-align: center;"><strong>✓</strong></td>
+<td style="text-align: center;">✗</td>
 </tr>
 </tbody>
 </table>
 <h2 id="engine-interface">Engine Interface<a class="headerlink" href="#engine-interface" title="Permanent link">&para;</a></h2>
 <p>All engines implement the <code>Engine</code> interface:</p>
-<div class="highlight"><pre><span></span><code><a id="__codelineno-0-1" name="__codelineno-0-1" href="#__codelineno-0-1"></a><span class="kd">type</span><span class="w"> </span><span class="nx">Engine</span><span class="w"> </span><span class="kd">interface</span><span class="w"> </span><span class="p">{</span>
-<a id="__codelineno-0-2" name="__codelineno-0-2" href="#__codelineno-0-2"></a><span class="w">    </span><span class="c1">// Metadata</span>
-<a id="__codelineno-0-3" name="__codelineno-0-3" href="#__codelineno-0-3"></a><span class="w">    </span><span class="nx">GetName</span><span class="p">()</span><span class="w"> </span><span class="kt">string</span>
-<a id="__codelineno-0-4" name="__codelineno-0-4" href="#__codelineno-0-4"></a><span class="w">    </span><span class="nx">GetVersion</span><span class="p">()</span><span class="w"> </span><span class="kt">string</span>
-<a id="__codelineno-0-5" name="__codelineno-0-5" href="#__codelineno-0-5"></a><span class="w">    </span><span class="nx">GetSupportedTools</span><span class="p">()</span><span class="w"> </span><span class="p">[]</span><span class="kt">string</span>
-<a id="__codelineno-0-6" name="__codelineno-0-6" href="#__codelineno-0-6"></a>
-<a id="__codelineno-0-7" name="__codelineno-0-7" href="#__codelineno-0-7"></a><span class="w">    </span><span class="c1">// Search methods</span>
-<a id="__codelineno-0-8" name="__codelineno-0-8" href="#__codelineno-0-8"></a><span class="w">    </span><span class="nx">Search</span><span class="p">(</span><span class="nx">ctx</span><span class="w"> </span><span class="nx">context</span><span class="p">.</span><span class="nx">Context</span><span class="p">,</span><span class="w"> </span><span class="nx">params</span><span class="w"> </span><span class="nx">SearchParams</span><span class="p">)</span><span class="w"> </span><span class="p">(</span><span class="o">*</span><span class="nx">SearchResult</span><span class="p">,</span><span class="w"> </span><span class="kt">error</span><span class="p">)</span>
-<a id="__codelineno-0-9" name="__codelineno-0-9" href="#__codelineno-0-9"></a><span class="w">    </span><span class="nx">SearchNews</span><span class="p">(</span><span class="nx">ctx</span><span class="w"> </span><span class="nx">context</span><span class="p">.</span><span class="nx">Context</span><span class="p">,</span><span class="w"> </span><span class="nx">params</span><span class="w"> </span><span class="nx">SearchParams</span><span class="p">)</span><span class="w"> </span><span class="p">(</span><span class="o">*</span><span class="nx">SearchResult</span><span class="p">,</span><span class="w"> </span><span class="kt">error</span><span class="p">)</span>
-<a id="__codelineno-0-10" name="__codelineno-0-10" href="#__codelineno-0-10"></a><span class="w">    </span><span class="nx">SearchImages</span><span class="p">(</span><span class="nx">ctx</span><span class="w"> </span><span class="nx">context</span><span class="p">.</span><span class="nx">Context</span><span class="p">,</span><span class="w"> </span><span class="nx">params</span><span class="w"> </span><span class="nx">SearchParams</span><span class="p">)</span><span class="w"> </span><span class="p">(</span><span class="o">*</span><span class="nx">SearchResult</span><span class="p">,</span><span class="w"> </span><span class="kt">error</span><span class="p">)</span>
-<a id="__codelineno-0-11" name="__codelineno-0-11" href="#__codelineno-0-11"></a><span class="w">    </span><span class="nx">SearchVideos</span><span class="p">(</span><span class="nx">ctx</span><span class="w"> </span><span class="nx">context</span><span class="p">.</span><span class="nx">Context</span><span class="p">,</span><span class="w"> </span><span class="nx">params</span><span class="w"> </span><span class="nx">SearchParams</span><span class="p">)</span><span class="w"> </span><span class="p">(</span><span class="o">*</span><span class="nx">SearchResult</span><span class="p">,</span><span class="w"> </span><span class="kt">error</span><span class="p">)</span>
-<a id="__codelineno-0-12" name="__codelineno-0-12" href="#__codelineno-0-12"></a><span class="w">    </span><span class="nx">SearchPlaces</span><span class="p">(</span><span class="nx">ctx</span><span class="w"> </span><span class="nx">context</span><span class="p">.</span><span class="nx">Context</span><span class="p">,</span><span class="w"> </span><span class="nx">params</span><span class="w"> </span><span class="nx">SearchParams</span><span class="p">)</span><span class="w"> </span><span class="p">(</span><span class="o">*</span><span class="nx">SearchResult</span><span class="p">,</span><span class="w"> </span><span class="kt">error</span><span class="p">)</span>
-<a id="__codelineno-0-13" name="__codelineno-0-13" href="#__codelineno-0-13"></a><span class="w">    </span><span class="nx">SearchMaps</span><span class="p">(</span><span class="nx">ctx</span><span class="w"> </span><span class="nx">context</span><span class="p">.</span><span class="nx">Context</span><span class="p">,</span><span class="w"> </span><span class="nx">params</span><span class="w"> </span><span class="nx">SearchParams</span><span class="p">)</span><span class="w"> </span><span class="p">(</span><span class="o">*</span><span class="nx">SearchResult</span><span class="p">,</span><span class="w"> </span><span class="kt">error</span><span class="p">)</span>
-<a id="__codelineno-0-14" name="__codelineno-0-14" href="#__codelineno-0-14"></a><span class="w">    </span><span class="nx">SearchReviews</span><span class="p">(</span><span class="nx">ctx</span><span class="w"> </span><span class="nx">context</span><span class="p">.</span><span class="nx">Context</span><span class="p">,</span><span class="w"> </span><span class="nx">params</span><span class="w"> </span><span class="nx">SearchParams</span><span class="p">)</span><span class="w"> </span><span class="p">(</span><span class="o">*</span><span class="nx">SearchResult</span><span class="p">,</span><span class="w"> </span><span class="kt">error</span><span class="p">)</span>
-<a id="__codelineno-0-15" name="__codelineno-0-15" href="#__codelineno-0-15"></a><span class="w">    </span><span class="nx">SearchShopping</span><span class="p">(</span><span class="nx">ctx</span><span class="w"> </span><span class="nx">context</span><span class="p">.</span><span class="nx">Context</span><span class="p">,</span><span class="w"> </span><span class="nx">params</span><span class="w"> </span><span class="nx">SearchParams</span><span class="p">)</span><span class="w"> </span><span class="p">(</span><span class="o">*</span><span class="nx">SearchResult</span><span class="p">,</span><span class="w"> </span><span class="kt">error</span><span class="p">)</span>
-<a id="__codelineno-0-16" name="__codelineno-0-16" href="#__codelineno-0-16"></a><span class="w">    </span><span class="nx">SearchScholar</span><span class="p">(</span><span class="nx">ctx</span><span class="w"> </span><span class="nx">context</span><span class="p">.</span><span class="nx">Context</span><span class="p">,</span><span class="w"> </span><span class="nx">params</span><span class="w"> </span><span class="nx">SearchParams</span><span class="p">)</span><span class="w"> </span><span class="p">(</span><span class="o">*</span><span class="nx">SearchResult</span><span class="p">,</span><span class="w"> </span><span class="kt">error</span><span class="p">)</span>
-<a id="__codelineno-0-17" name="__codelineno-0-17" href="#__codelineno-0-17"></a><span class="w">    </span><span class="nx">SearchLens</span><span class="p">(</span><span class="nx">ctx</span><span class="w"> </span><span class="nx">context</span><span class="p">.</span><span class="nx">Context</span><span class="p">,</span><span class="w"> </span><span class="nx">params</span><span class="w"> </span><span class="nx">SearchParams</span><span class="p">)</span><span class="w"> </span><span class="p">(</span><span class="o">*</span><span class="nx">SearchResult</span><span class="p">,</span><span class="w"> </span><span class="kt">error</span><span class="p">)</span>
-<a id="__codelineno-0-18" name="__codelineno-0-18" href="#__codelineno-0-18"></a><span class="w">    </span><span class="nx">SearchAutocomplete</span><span class="p">(</span><span class="nx">ctx</span><span class="w"> </span><span class="nx">context</span><span class="p">.</span><span class="nx">Context</span><span class="p">,</span><span class="w"> </span><span class="nx">params</span><span class="w"> </span><span class="nx">SearchParams</span><span class="p">)</span><span class="w"> </span><span class="p">(</span><span class="o">*</span><span class="nx">SearchResult</span><span class="p">,</span><span class="w"> </span><span class="kt">error</span><span class="p">)</span>
-<a id="__codelineno-0-19" name="__codelineno-0-19" href="#__codelineno-0-19"></a>
-<a id="__codelineno-0-20" name="__codelineno-0-20" href="#__codelineno-0-20"></a><span class="w">    </span><span class="c1">// Utility</span>
-<a id="__codelineno-0-21" name="__codelineno-0-21" href="#__codelineno-0-21"></a><span class="w">    </span><span class="nx">ScrapeWebpage</span><span class="p">(</span><span class="nx">ctx</span><span class="w"> </span><span class="nx">context</span><span class="p">.</span><span class="nx">Context</span><span class="p">,</span><span class="w"> </span><span class="nx">params</span><span class="w"> </span><span class="nx">ScrapeParams</span><span class="p">)</span><span class="w"> </span><span class="p">(</span><span class="o">*</span><span class="nx">SearchResult</span><span class="p">,</span><span class="w"> </span><span class="kt">error</span><span class="p">)</span>
-<a id="__codelineno-0-22" name="__codelineno-0-22" href="#__codelineno-0-22"></a><span class="p">}</span>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-2-1" name="__codelineno-2-1" href="#__codelineno-2-1"></a><span class="kd">type</span><span class="w"> </span><span class="nx">Engine</span><span class="w"> </span><span class="kd">interface</span><span class="w"> </span><span class="p">{</span>
+<a id="__codelineno-2-2" name="__codelineno-2-2" href="#__codelineno-2-2"></a><span class="w">    </span><span class="c1">// Metadata</span>
+<a id="__codelineno-2-3" name="__codelineno-2-3" href="#__codelineno-2-3"></a><span class="w">    </span><span class="nx">GetName</span><span class="p">()</span><span class="w"> </span><span class="kt">string</span>
+<a id="__codelineno-2-4" name="__codelineno-2-4" href="#__codelineno-2-4"></a><span class="w">    </span><span class="nx">GetVersion</span><span class="p">()</span><span class="w"> </span><span class="kt">string</span>
+<a id="__codelineno-2-5" name="__codelineno-2-5" href="#__codelineno-2-5"></a><span class="w">    </span><span class="nx">GetSupportedTools</span><span class="p">()</span><span class="w"> </span><span class="p">[]</span><span class="kt">string</span>
+<a id="__codelineno-2-6" name="__codelineno-2-6" href="#__codelineno-2-6"></a>
+<a id="__codelineno-2-7" name="__codelineno-2-7" href="#__codelineno-2-7"></a><span class="w">    </span><span class="c1">// Search methods</span>
+<a id="__codelineno-2-8" name="__codelineno-2-8" href="#__codelineno-2-8"></a><span class="w">    </span><span class="nx">Search</span><span class="p">(</span><span class="nx">ctx</span><span class="w"> </span><span class="nx">context</span><span class="p">.</span><span class="nx">Context</span><span class="p">,</span><span class="w"> </span><span class="nx">params</span><span class="w"> </span><span class="nx">SearchParams</span><span class="p">)</span><span class="w"> </span><span class="p">(</span><span class="o">*</span><span class="nx">SearchResult</span><span class="p">,</span><span class="w"> </span><span class="kt">error</span><span class="p">)</span>
+<a id="__codelineno-2-9" name="__codelineno-2-9" href="#__codelineno-2-9"></a><span class="w">    </span><span class="nx">SearchNews</span><span class="p">(</span><span class="nx">ctx</span><span class="w"> </span><span class="nx">context</span><span class="p">.</span><span class="nx">Context</span><span class="p">,</span><span class="w"> </span><span class="nx">params</span><span class="w"> </span><span class="nx">SearchParams</span><span class="p">)</span><span class="w"> </span><span class="p">(</span><span class="o">*</span><span class="nx">SearchResult</span><span class="p">,</span><span class="w"> </span><span class="kt">error</span><span class="p">)</span>
+<a id="__codelineno-2-10" name="__codelineno-2-10" href="#__codelineno-2-10"></a><span class="w">    </span><span class="nx">SearchImages</span><span class="p">(</span><span class="nx">ctx</span><span class="w"> </span><span class="nx">context</span><span class="p">.</span><span class="nx">Context</span><span class="p">,</span><span class="w"> </span><span class="nx">params</span><span class="w"> </span><span class="nx">SearchParams</span><span class="p">)</span><span class="w"> </span><span class="p">(</span><span class="o">*</span><span class="nx">SearchResult</span><span class="p">,</span><span class="w"> </span><span class="kt">error</span><span class="p">)</span>
+<a id="__codelineno-2-11" name="__codelineno-2-11" href="#__codelineno-2-11"></a><span class="w">    </span><span class="nx">SearchVideos</span><span class="p">(</span><span class="nx">ctx</span><span class="w"> </span><span class="nx">context</span><span class="p">.</span><span class="nx">Context</span><span class="p">,</span><span class="w"> </span><span class="nx">params</span><span class="w"> </span><span class="nx">SearchParams</span><span class="p">)</span><span class="w"> </span><span class="p">(</span><span class="o">*</span><span class="nx">SearchResult</span><span class="p">,</span><span class="w"> </span><span class="kt">error</span><span class="p">)</span>
+<a id="__codelineno-2-12" name="__codelineno-2-12" href="#__codelineno-2-12"></a><span class="w">    </span><span class="nx">SearchPlaces</span><span class="p">(</span><span class="nx">ctx</span><span class="w"> </span><span class="nx">context</span><span class="p">.</span><span class="nx">Context</span><span class="p">,</span><span class="w"> </span><span class="nx">params</span><span class="w"> </span><span class="nx">SearchParams</span><span class="p">)</span><span class="w"> </span><span class="p">(</span><span class="o">*</span><span class="nx">SearchResult</span><span class="p">,</span><span class="w"> </span><span class="kt">error</span><span class="p">)</span>
+<a id="__codelineno-2-13" name="__codelineno-2-13" href="#__codelineno-2-13"></a><span class="w">    </span><span class="nx">SearchMaps</span><span class="p">(</span><span class="nx">ctx</span><span class="w"> </span><span class="nx">context</span><span class="p">.</span><span class="nx">Context</span><span class="p">,</span><span class="w"> </span><span class="nx">params</span><span class="w"> </span><span class="nx">SearchParams</span><span class="p">)</span><span class="w"> </span><span class="p">(</span><span class="o">*</span><span class="nx">SearchResult</span><span class="p">,</span><span class="w"> </span><span class="kt">error</span><span class="p">)</span>
+<a id="__codelineno-2-14" name="__codelineno-2-14" href="#__codelineno-2-14"></a><span class="w">    </span><span class="nx">SearchReviews</span><span class="p">(</span><span class="nx">ctx</span><span class="w"> </span><span class="nx">context</span><span class="p">.</span><span class="nx">Context</span><span class="p">,</span><span class="w"> </span><span class="nx">params</span><span class="w"> </span><span class="nx">SearchParams</span><span class="p">)</span><span class="w"> </span><span class="p">(</span><span class="o">*</span><span class="nx">SearchResult</span><span class="p">,</span><span class="w"> </span><span class="kt">error</span><span class="p">)</span>
+<a id="__codelineno-2-15" name="__codelineno-2-15" href="#__codelineno-2-15"></a><span class="w">    </span><span class="nx">SearchShopping</span><span class="p">(</span><span class="nx">ctx</span><span class="w"> </span><span class="nx">context</span><span class="p">.</span><span class="nx">Context</span><span class="p">,</span><span class="w"> </span><span class="nx">params</span><span class="w"> </span><span class="nx">SearchParams</span><span class="p">)</span><span class="w"> </span><span class="p">(</span><span class="o">*</span><span class="nx">SearchResult</span><span class="p">,</span><span class="w"> </span><span class="kt">error</span><span class="p">)</span>
+<a id="__codelineno-2-16" name="__codelineno-2-16" href="#__codelineno-2-16"></a><span class="w">    </span><span class="nx">SearchScholar</span><span class="p">(</span><span class="nx">ctx</span><span class="w"> </span><span class="nx">context</span><span class="p">.</span><span class="nx">Context</span><span class="p">,</span><span class="w"> </span><span class="nx">params</span><span class="w"> </span><span class="nx">SearchParams</span><span class="p">)</span><span class="w"> </span><span class="p">(</span><span class="o">*</span><span class="nx">SearchResult</span><span class="p">,</span><span class="w"> </span><span class="kt">error</span><span class="p">)</span>
+<a id="__codelineno-2-17" name="__codelineno-2-17" href="#__codelineno-2-17"></a><span class="w">    </span><span class="nx">SearchLens</span><span class="p">(</span><span class="nx">ctx</span><span class="w"> </span><span class="nx">context</span><span class="p">.</span><span class="nx">Context</span><span class="p">,</span><span class="w"> </span><span class="nx">params</span><span class="w"> </span><span class="nx">SearchParams</span><span class="p">)</span><span class="w"> </span><span class="p">(</span><span class="o">*</span><span class="nx">SearchResult</span><span class="p">,</span><span class="w"> </span><span class="kt">error</span><span class="p">)</span>
+<a id="__codelineno-2-18" name="__codelineno-2-18" href="#__codelineno-2-18"></a><span class="w">    </span><span class="nx">SearchAutocomplete</span><span class="p">(</span><span class="nx">ctx</span><span class="w"> </span><span class="nx">context</span><span class="p">.</span><span class="nx">Context</span><span class="p">,</span><span class="w"> </span><span class="nx">params</span><span class="w"> </span><span class="nx">SearchParams</span><span class="p">)</span><span class="w"> </span><span class="p">(</span><span class="o">*</span><span class="nx">SearchResult</span><span class="p">,</span><span class="w"> </span><span class="kt">error</span><span class="p">)</span>
+<a id="__codelineno-2-19" name="__codelineno-2-19" href="#__codelineno-2-19"></a>
+<a id="__codelineno-2-20" name="__codelineno-2-20" href="#__codelineno-2-20"></a><span class="w">    </span><span class="c1">// Utility</span>
+<a id="__codelineno-2-21" name="__codelineno-2-21" href="#__codelineno-2-21"></a><span class="w">    </span><span class="nx">ScrapeWebpage</span><span class="p">(</span><span class="nx">ctx</span><span class="w"> </span><span class="nx">context</span><span class="p">.</span><span class="nx">Context</span><span class="p">,</span><span class="w"> </span><span class="nx">params</span><span class="w"> </span><span class="nx">ScrapeParams</span><span class="p">)</span><span class="w"> </span><span class="p">(</span><span class="o">*</span><span class="nx">SearchResult</span><span class="p">,</span><span class="w"> </span><span class="kt">error</span><span class="p">)</span>
+<a id="__codelineno-2-22" name="__codelineno-2-22" href="#__codelineno-2-22"></a><span class="p">}</span>
 </code></pre></div>
 <h2 id="selecting-an-engine">Selecting an Engine<a class="headerlink" href="#selecting-an-engine" title="Permanent link">&para;</a></h2>
 <h3 id="via-environment-variable">Via Environment Variable<a class="headerlink" href="#via-environment-variable" title="Permanent link">&para;</a></h3>
-<div class="highlight"><pre><span></span><code><a id="__codelineno-1-1" name="__codelineno-1-1" href="#__codelineno-1-1"></a><span class="nb">export</span><span class="w"> </span><span class="nv">SEARCH_ENGINE</span><span class="o">=</span><span class="s2">&quot;serper&quot;</span><span class="w">  </span><span class="c1"># or &quot;serpapi&quot;</span>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-3-1" name="__codelineno-3-1" href="#__codelineno-3-1"></a><span class="nb">export</span><span class="w"> </span><span class="nv">SEARCH_ENGINE</span><span class="o">=</span><span class="s2">&quot;serper&quot;</span><span class="w">  </span><span class="c1"># or &quot;serpapi&quot;, &quot;brave&quot;, &quot;exa&quot;</span>
 </code></pre></div>
 <h3 id="programmatically">Programmatically<a class="headerlink" href="#programmatically" title="Permanent link">&para;</a></h3>
-<div class="highlight"><pre><span></span><code><a id="__codelineno-2-1" name="__codelineno-2-1" href="#__codelineno-2-1"></a><span class="c1">// Use default (from SEARCH_ENGINE env var)</span>
-<a id="__codelineno-2-2" name="__codelineno-2-2" href="#__codelineno-2-2"></a><span class="nx">c</span><span class="p">,</span><span class="w"> </span><span class="nx">err</span><span class="w"> </span><span class="o">:=</span><span class="w"> </span><span class="nx">client</span><span class="p">.</span><span class="nx">New</span><span class="p">()</span>
-<a id="__codelineno-2-3" name="__codelineno-2-3" href="#__codelineno-2-3"></a>
-<a id="__codelineno-2-4" name="__codelineno-2-4" href="#__codelineno-2-4"></a><span class="c1">// Specify explicitly</span>
-<a id="__codelineno-2-5" name="__codelineno-2-5" href="#__codelineno-2-5"></a><span class="nx">c</span><span class="p">,</span><span class="w"> </span><span class="nx">err</span><span class="w"> </span><span class="o">:=</span><span class="w"> </span><span class="nx">client</span><span class="p">.</span><span class="nx">NewWithEngine</span><span class="p">(</span><span class="s">&quot;serpapi&quot;</span><span class="p">)</span>
-<a id="__codelineno-2-6" name="__codelineno-2-6" href="#__codelineno-2-6"></a>
-<a id="__codelineno-2-7" name="__codelineno-2-7" href="#__codelineno-2-7"></a><span class="c1">// Switch at runtime</span>
-<a id="__codelineno-2-8" name="__codelineno-2-8" href="#__codelineno-2-8"></a><span class="nx">c</span><span class="p">.</span><span class="nx">SetEngine</span><span class="p">(</span><span class="s">&quot;serper&quot;</span><span class="p">)</span>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-4-1" name="__codelineno-4-1" href="#__codelineno-4-1"></a><span class="c1">// Use default (from SEARCH_ENGINE env var)</span>
+<a id="__codelineno-4-2" name="__codelineno-4-2" href="#__codelineno-4-2"></a><span class="nx">c</span><span class="p">,</span><span class="w"> </span><span class="nx">err</span><span class="w"> </span><span class="o">:=</span><span class="w"> </span><span class="nx">client</span><span class="p">.</span><span class="nx">New</span><span class="p">()</span>
+<a id="__codelineno-4-3" name="__codelineno-4-3" href="#__codelineno-4-3"></a>
+<a id="__codelineno-4-4" name="__codelineno-4-4" href="#__codelineno-4-4"></a><span class="c1">// Specify explicitly</span>
+<a id="__codelineno-4-5" name="__codelineno-4-5" href="#__codelineno-4-5"></a><span class="nx">c</span><span class="p">,</span><span class="w"> </span><span class="nx">err</span><span class="w"> </span><span class="o">:=</span><span class="w"> </span><span class="nx">client</span><span class="p">.</span><span class="nx">NewWithEngine</span><span class="p">(</span><span class="s">&quot;brave&quot;</span><span class="p">)</span>
+<a id="__codelineno-4-6" name="__codelineno-4-6" href="#__codelineno-4-6"></a>
+<a id="__codelineno-4-7" name="__codelineno-4-7" href="#__codelineno-4-7"></a><span class="c1">// Switch at runtime</span>
+<a id="__codelineno-4-8" name="__codelineno-4-8" href="#__codelineno-4-8"></a><span class="nx">c</span><span class="p">.</span><span class="nx">SetEngine</span><span class="p">(</span><span class="s">&quot;exa&quot;</span><span class="p">)</span>
 </code></pre></div>
+<h3 id="engine-selection-guide">Engine Selection Guide<a class="headerlink" href="#engine-selection-guide" title="Permanent link">&para;</a></h3>
+<table>
+<thead>
+<tr>
+<th>Engine</th>
+<th>Best For</th>
+<th>Pricing</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>Serper</strong></td>
+<td>Full-featured SERP data</td>
+<td>Pay per search</td>
+</tr>
+<tr>
+<td><strong>SerpAPI</strong></td>
+<td>Google SERP scraping</td>
+<td>Pay per search</td>
+</tr>
+<tr>
+<td><strong>Brave</strong></td>
+<td>Privacy-focused, fast</td>
+<td>Free tier + paid</td>
+</tr>
+<tr>
+<td><strong>Exa</strong></td>
+<td>LLM applications, research</td>
+<td>Pay per search</td>
+</tr>
+</tbody>
+</table>
 <h2 id="checking-engine-capabilities">Checking Engine Capabilities<a class="headerlink" href="#checking-engine-capabilities" title="Permanent link">&para;</a></h2>
-<div class="highlight"><pre><span></span><code><a id="__codelineno-3-1" name="__codelineno-3-1" href="#__codelineno-3-1"></a><span class="nx">c</span><span class="p">,</span><span class="w"> </span><span class="nx">_</span><span class="w"> </span><span class="o">:=</span><span class="w"> </span><span class="nx">client</span><span class="p">.</span><span class="nx">New</span><span class="p">()</span>
-<a id="__codelineno-3-2" name="__codelineno-3-2" href="#__codelineno-3-2"></a>
-<a id="__codelineno-3-3" name="__codelineno-3-3" href="#__codelineno-3-3"></a><span class="c1">// Check current engine</span>
-<a id="__codelineno-3-4" name="__codelineno-3-4" href="#__codelineno-3-4"></a><span class="nx">fmt</span><span class="p">.</span><span class="nx">Printf</span><span class="p">(</span><span class="s">&quot;Engine: %s v%s\n&quot;</span><span class="p">,</span><span class="w"> </span><span class="nx">c</span><span class="p">.</span><span class="nx">GetName</span><span class="p">(),</span><span class="w"> </span><span class="nx">c</span><span class="p">.</span><span class="nx">GetVersion</span><span class="p">())</span>
-<a id="__codelineno-3-5" name="__codelineno-3-5" href="#__codelineno-3-5"></a>
-<a id="__codelineno-3-6" name="__codelineno-3-6" href="#__codelineno-3-6"></a><span class="c1">// List supported tools</span>
-<a id="__codelineno-3-7" name="__codelineno-3-7" href="#__codelineno-3-7"></a><span class="nx">tools</span><span class="w"> </span><span class="o">:=</span><span class="w"> </span><span class="nx">c</span><span class="p">.</span><span class="nx">GetSupportedTools</span><span class="p">()</span>
-<a id="__codelineno-3-8" name="__codelineno-3-8" href="#__codelineno-3-8"></a><span class="nx">fmt</span><span class="p">.</span><span class="nx">Printf</span><span class="p">(</span><span class="s">&quot;Supported: %v\n&quot;</span><span class="p">,</span><span class="w"> </span><span class="nx">tools</span><span class="p">)</span>
-<a id="__codelineno-3-9" name="__codelineno-3-9" href="#__codelineno-3-9"></a>
-<a id="__codelineno-3-10" name="__codelineno-3-10" href="#__codelineno-3-10"></a><span class="c1">// Check specific operation</span>
-<a id="__codelineno-3-11" name="__codelineno-3-11" href="#__codelineno-3-11"></a><span class="k">if</span><span class="w"> </span><span class="nx">c</span><span class="p">.</span><span class="nx">SupportsOperation</span><span class="p">(</span><span class="nx">client</span><span class="p">.</span><span class="nx">OpSearchLens</span><span class="p">)</span><span class="w"> </span><span class="p">{</span>
-<a id="__codelineno-3-12" name="__codelineno-3-12" href="#__codelineno-3-12"></a><span class="w">    </span><span class="c1">// Lens is supported</span>
-<a id="__codelineno-3-13" name="__codelineno-3-13" href="#__codelineno-3-13"></a><span class="p">}</span>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-5-1" name="__codelineno-5-1" href="#__codelineno-5-1"></a><span class="nx">c</span><span class="p">,</span><span class="w"> </span><span class="nx">_</span><span class="w"> </span><span class="o">:=</span><span class="w"> </span><span class="nx">client</span><span class="p">.</span><span class="nx">New</span><span class="p">()</span>
+<a id="__codelineno-5-2" name="__codelineno-5-2" href="#__codelineno-5-2"></a>
+<a id="__codelineno-5-3" name="__codelineno-5-3" href="#__codelineno-5-3"></a><span class="c1">// Check current engine</span>
+<a id="__codelineno-5-4" name="__codelineno-5-4" href="#__codelineno-5-4"></a><span class="nx">fmt</span><span class="p">.</span><span class="nx">Printf</span><span class="p">(</span><span class="s">&quot;Engine: %s v%s\n&quot;</span><span class="p">,</span><span class="w"> </span><span class="nx">c</span><span class="p">.</span><span class="nx">GetName</span><span class="p">(),</span><span class="w"> </span><span class="nx">c</span><span class="p">.</span><span class="nx">GetVersion</span><span class="p">())</span>
+<a id="__codelineno-5-5" name="__codelineno-5-5" href="#__codelineno-5-5"></a>
+<a id="__codelineno-5-6" name="__codelineno-5-6" href="#__codelineno-5-6"></a><span class="c1">// List supported tools</span>
+<a id="__codelineno-5-7" name="__codelineno-5-7" href="#__codelineno-5-7"></a><span class="nx">tools</span><span class="w"> </span><span class="o">:=</span><span class="w"> </span><span class="nx">c</span><span class="p">.</span><span class="nx">GetSupportedTools</span><span class="p">()</span>
+<a id="__codelineno-5-8" name="__codelineno-5-8" href="#__codelineno-5-8"></a><span class="nx">fmt</span><span class="p">.</span><span class="nx">Printf</span><span class="p">(</span><span class="s">&quot;Supported: %v\n&quot;</span><span class="p">,</span><span class="w"> </span><span class="nx">tools</span><span class="p">)</span>
+<a id="__codelineno-5-9" name="__codelineno-5-9" href="#__codelineno-5-9"></a>
+<a id="__codelineno-5-10" name="__codelineno-5-10" href="#__codelineno-5-10"></a><span class="c1">// Check specific operation</span>
+<a id="__codelineno-5-11" name="__codelineno-5-11" href="#__codelineno-5-11"></a><span class="k">if</span><span class="w"> </span><span class="nx">c</span><span class="p">.</span><span class="nx">SupportsOperation</span><span class="p">(</span><span class="nx">client</span><span class="p">.</span><span class="nx">OpSearchLens</span><span class="p">)</span><span class="w"> </span><span class="p">{</span>
+<a id="__codelineno-5-12" name="__codelineno-5-12" href="#__codelineno-5-12"></a><span class="w">    </span><span class="c1">// Lens is supported</span>
+<a id="__codelineno-5-13" name="__codelineno-5-13" href="#__codelineno-5-13"></a><span class="p">}</span>
 </code></pre></div>
 
 

@@ -358,6 +358,15 @@
   
 </li>
       
+        <li class="md-nav__item">
+  <a href="#supported-engines" class="md-nav__link">
+    <span class="md-ellipsis">
+      Supported Engines
+    </span>
+  </a>
+  
+</li>
+      
     </ul>
   
 </nav>
@@ -948,6 +957,15 @@
   
 </li>
       
+        <li class="md-nav__item">
+  <a href="#supported-engines" class="md-nav__link">
+    <span class="md-ellipsis">
+      Supported Engines
+    </span>
+  </a>
+  
+</li>
+      
     </ul>
   
 </nav>
@@ -977,7 +995,7 @@
 <li><strong>Capability Checking</strong>: Automatic validation of operation support across different backends</li>
 <li><strong>Unified Interface</strong>: Common <code>Engine</code> interface for all search providers</li>
 <li><strong>Plugin Architecture</strong>: Easy addition of new search engines</li>
-<li><strong>Multiple Providers</strong>: Built-in support for Serper and SerpAPI</li>
+<li><strong>Multiple Providers</strong>: Built-in support for Serper, SerpAPI, Brave Search, and Exa.ai</li>
 <li><strong>Type Safety</strong>: Structured parameter and result types</li>
 <li><strong>Registry System</strong>: Automatic discovery and management of engines</li>
 <li><strong>MCP Server</strong>: Model Context Protocol server for AI integration with optional secure credentials</li>
@@ -1021,29 +1039,66 @@
 <a id="__codelineno-1-2" name="__codelineno-1-2" href="#__codelineno-1-2"></a>├── client/                 # Search engine client implementations
 <a id="__codelineno-1-3" name="__codelineno-1-3" href="#__codelineno-1-3"></a>│   ├── client.go           # Unified Client SDK with capability checking
 <a id="__codelineno-1-4" name="__codelineno-1-4" href="#__codelineno-1-4"></a>│   ├── serper/             # Serper.dev implementation
-<a id="__codelineno-1-5" name="__codelineno-1-5" href="#__codelineno-1-5"></a>│   └── serpapi/            # SerpAPI implementation
-<a id="__codelineno-1-6" name="__codelineno-1-6" href="#__codelineno-1-6"></a>├── cmd/                    # Executable applications
-<a id="__codelineno-1-7" name="__codelineno-1-7" href="#__codelineno-1-7"></a>│   ├── mcp-omniserp/       # MCP server for AI integration
-<a id="__codelineno-1-8" name="__codelineno-1-8" href="#__codelineno-1-8"></a>│   └── omniserp/           # CLI tool
-<a id="__codelineno-1-9" name="__codelineno-1-9" href="#__codelineno-1-9"></a>├── examples/               # Example programs
-<a id="__codelineno-1-10" name="__codelineno-1-10" href="#__codelineno-1-10"></a>│   ├── capability_check/   # Capability checking demo
-<a id="__codelineno-1-11" name="__codelineno-1-11" href="#__codelineno-1-11"></a>│   └── normalized_search/  # Normalized responses demo
-<a id="__codelineno-1-12" name="__codelineno-1-12" href="#__codelineno-1-12"></a>├── types.go                # Core types and Engine interface
-<a id="__codelineno-1-13" name="__codelineno-1-13" href="#__codelineno-1-13"></a>├── normalized.go           # Normalized response types
-<a id="__codelineno-1-14" name="__codelineno-1-14" href="#__codelineno-1-14"></a>├── normalizer.go           # Response normalizer
-<a id="__codelineno-1-15" name="__codelineno-1-15" href="#__codelineno-1-15"></a>└── omniserp.go             # Utility functions
+<a id="__codelineno-1-5" name="__codelineno-1-5" href="#__codelineno-1-5"></a>│   ├── serpapi/            # SerpAPI implementation
+<a id="__codelineno-1-6" name="__codelineno-1-6" href="#__codelineno-1-6"></a>│   ├── brave/              # Brave Search API
+<a id="__codelineno-1-7" name="__codelineno-1-7" href="#__codelineno-1-7"></a>│   └── exa/                # Exa.ai neural search
+<a id="__codelineno-1-8" name="__codelineno-1-8" href="#__codelineno-1-8"></a>├── cmd/                    # Executable applications
+<a id="__codelineno-1-9" name="__codelineno-1-9" href="#__codelineno-1-9"></a>│   ├── mcp-omniserp/       # MCP server for AI integration
+<a id="__codelineno-1-10" name="__codelineno-1-10" href="#__codelineno-1-10"></a>│   └── omniserp/           # CLI tool
+<a id="__codelineno-1-11" name="__codelineno-1-11" href="#__codelineno-1-11"></a>├── examples/               # Example programs
+<a id="__codelineno-1-12" name="__codelineno-1-12" href="#__codelineno-1-12"></a>│   ├── capability_check/   # Capability checking demo
+<a id="__codelineno-1-13" name="__codelineno-1-13" href="#__codelineno-1-13"></a>│   └── normalized_search/  # Normalized responses demo
+<a id="__codelineno-1-14" name="__codelineno-1-14" href="#__codelineno-1-14"></a>├── types.go                # Core types and Engine interface
+<a id="__codelineno-1-15" name="__codelineno-1-15" href="#__codelineno-1-15"></a>├── normalized.go           # Normalized response types
+<a id="__codelineno-1-16" name="__codelineno-1-16" href="#__codelineno-1-16"></a>├── normalizer.go           # Response normalizer
+<a id="__codelineno-1-17" name="__codelineno-1-17" href="#__codelineno-1-17"></a>└── omniserp.go             # Utility functions
 </code></pre></div>
 <h2 id="installation">Installation<a class="headerlink" href="#installation" title="Permanent link">&para;</a></h2>
 <div class="highlight"><pre><span></span><code><a id="__codelineno-2-1" name="__codelineno-2-1" href="#__codelineno-2-1"></a>go<span class="w"> </span>get<span class="w"> </span>github.com/plexusone/omniserp@latest
 </code></pre></div>
 <h2 id="environment-configuration">Environment Configuration<a class="headerlink" href="#environment-configuration" title="Permanent link">&para;</a></h2>
 <div class="highlight"><pre><span></span><code><a id="__codelineno-3-1" name="__codelineno-3-1" href="#__codelineno-3-1"></a><span class="c1"># Choose which engine to use (optional, defaults to &quot;serper&quot;)</span>
-<a id="__codelineno-3-2" name="__codelineno-3-2" href="#__codelineno-3-2"></a><span class="nb">export</span><span class="w"> </span><span class="nv">SEARCH_ENGINE</span><span class="o">=</span><span class="s2">&quot;serper&quot;</span><span class="w">  </span><span class="c1"># or &quot;serpapi&quot;</span>
+<a id="__codelineno-3-2" name="__codelineno-3-2" href="#__codelineno-3-2"></a><span class="nb">export</span><span class="w"> </span><span class="nv">SEARCH_ENGINE</span><span class="o">=</span><span class="s2">&quot;serper&quot;</span><span class="w">  </span><span class="c1"># or &quot;serpapi&quot;, &quot;brave&quot;, &quot;exa&quot;</span>
 <a id="__codelineno-3-3" name="__codelineno-3-3" href="#__codelineno-3-3"></a>
 <a id="__codelineno-3-4" name="__codelineno-3-4" href="#__codelineno-3-4"></a><span class="c1"># API keys for respective engines</span>
 <a id="__codelineno-3-5" name="__codelineno-3-5" href="#__codelineno-3-5"></a><span class="nb">export</span><span class="w"> </span><span class="nv">SERPER_API_KEY</span><span class="o">=</span><span class="s2">&quot;your_serper_key&quot;</span>
 <a id="__codelineno-3-6" name="__codelineno-3-6" href="#__codelineno-3-6"></a><span class="nb">export</span><span class="w"> </span><span class="nv">SERPAPI_API_KEY</span><span class="o">=</span><span class="s2">&quot;your_serpapi_key&quot;</span>
+<a id="__codelineno-3-7" name="__codelineno-3-7" href="#__codelineno-3-7"></a><span class="nb">export</span><span class="w"> </span><span class="nv">BRAVE_API_KEY</span><span class="o">=</span><span class="s2">&quot;your_brave_key&quot;</span>
+<a id="__codelineno-3-8" name="__codelineno-3-8" href="#__codelineno-3-8"></a><span class="nb">export</span><span class="w"> </span><span class="nv">EXA_API_KEY</span><span class="o">=</span><span class="s2">&quot;your_exa_key&quot;</span>
 </code></pre></div>
+<h2 id="supported-engines">Supported Engines<a class="headerlink" href="#supported-engines" title="Permanent link">&para;</a></h2>
+<table>
+<thead>
+<tr>
+<th>Engine</th>
+<th>Best For</th>
+<th>Key Features</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>Serper</strong></td>
+<td>Full SERP data</td>
+<td>All 12 search types, Lens support</td>
+</tr>
+<tr>
+<td><strong>SerpAPI</strong></td>
+<td>Google scraping</td>
+<td>Reliable, well-documented</td>
+</tr>
+<tr>
+<td><strong>Brave</strong></td>
+<td>Privacy, speed</td>
+<td>Free tier, summarizer, goggles</td>
+</tr>
+<tr>
+<td><strong>Exa</strong></td>
+<td>LLM/AI apps</td>
+<td>Neural search, content extraction</td>
+</tr>
+</tbody>
+</table>
+<p>See <a href="engines/overview/">Engines Overview</a> for detailed feature comparison.</p>
 
 
 

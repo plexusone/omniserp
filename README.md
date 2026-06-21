@@ -39,7 +39,7 @@ The `omniserp` package provides:
 - ✅ **Capability Checking**: Automatic validation of operation support across different backends
 - 🔌 **Unified Interface**: Common `Engine` interface for all search providers
 - 🧩 **Plugin Architecture**: Easy addition of new search engines
-- 🤝 **Multiple Providers**: Built-in support for Serper and SerpAPI
+- 🤝 **Multiple Providers**: Built-in support for Serper, SerpAPI, Brave Search, and Exa.ai
 - 🔒 **Type Safety**: Structured parameter and result types
 - 📋 **Registry System**: Automatic discovery and management of engines
 - 🤖 **MCP Server**: Model Context Protocol server for AI integration with optional secure credentials (`cmd/mcp-omniserp`)
@@ -88,7 +88,9 @@ omniserp/
 ├── client/                 # Search engine client implementations
 │   ├── client.go           # Unified Client SDK with capability checking
 │   ├── serper/             # Serper.dev implementation
-│   └── serpapi/            # SerpAPI implementation
+│   ├── serpapi/            # SerpAPI implementation
+│   ├── brave/              # Brave Search API
+│   └── exa/                # Exa.ai neural search
 ├── cmd/                    # Executable applications
 │   ├── mcp-omniserp/       # MCP server for AI integration (with optional secure credentials)
 │   └── omniserp/           # CLI tool
@@ -454,20 +456,36 @@ func main() {
 - **Supported Operations**: All search types except Lens
 - **Note**: `SearchLens()` is not supported and will return `ErrOperationNotSupported`
 
-| Operation | Serper | SerpAPI |
-|-----------|--------|---------|
-| Web Search | ✓ | ✓ |
-| News Search | ✓ | ✓ |
-| Image Search | ✓ | ✓ |
-| Video Search | ✓ | ✓ |
-| Places Search | ✓ | ✓ |
-| Maps Search | ✓ | ✓ |
-| Reviews Search | ✓ | ✓ |
-| Shopping Search | ✓ | ✓ |
-| Scholar Search | ✓ | ✓ |
-| **Lens Search** | **✓** | **✗** |
-| Autocomplete | ✓ | ✓ |
-| Webpage Scrape | ✓ | ✓ |
+### Brave Search
+- **Package**: `github.com/plexusone/omniserp/client/brave`
+- **Environment Variable**: `BRAVE_API_KEY`
+- **Website**: [brave.com/search/api](https://brave.com/search/api)
+- **Supported Operations**: Web, News, Images, Videos, Autocomplete
+- **Features**: Privacy-focused, fast response times, free tier available
+
+### Exa.ai
+- **Package**: `github.com/plexusone/omniserp/client/exa`
+- **Environment Variable**: `EXA_API_KEY`
+- **Website**: [exa.ai](https://exa.ai)
+- **Supported Operations**: Web Search, News Search, Scholar Search
+- **Features**: Neural search optimized for LLM applications, multiple search modes (auto, instant, fast, deep)
+
+| Operation | Serper | SerpAPI | Brave | Exa |
+|-----------|:------:|:-------:|:-----:|:---:|
+| Web Search | ✓ | ✓ | ✓ | ✓ |
+| News Search | ✓ | ✓ | ✓ | ✓ |
+| Image Search | ✓ | ✓ | ✓ | ✗ |
+| Video Search | ✓ | ✓ | ✓ | ✗ |
+| Places Search | ✓ | ✓ | ✗ | ✗ |
+| Maps Search | ✓ | ✓ | ✗ | ✗ |
+| Reviews Search | ✓ | ✓ | ✗ | ✗ |
+| Shopping Search | ✓ | ✓ | ✗ | ✗ |
+| Scholar Search | ✓ | ✓ | ✗ | ✓ |
+| Lens Search | ✓ | ✗ | ✗ | ✗ |
+| Autocomplete | ✓ | ✓ | ✓ | ✗ |
+| Webpage Scrape | ✓ | ✓ | ✗ | ✗ |
+| **Neural Search** | ✗ | ✗ | ✗ | **✓** |
+| **Content Extract** | ✗ | ✗ | ✗ | **✓** |
 
 ## Available Search Methods
 
@@ -573,11 +591,13 @@ The package uses environment variables for configuration:
 
 ```bash
 # Choose which engine to use (optional, defaults to "serper")
-export SEARCH_ENGINE="serper"  # or "serpapi"
+export SEARCH_ENGINE="serper"  # or "serpapi", "brave", "exa"
 
 # API keys for respective engines
 export SERPER_API_KEY="your_serper_key"
 export SERPAPI_API_KEY="your_serpapi_key"
+export BRAVE_API_KEY="your_brave_key"
+export EXA_API_KEY="your_exa_key"
 ```
 
 ## Adding New Engines

@@ -35,8 +35,8 @@ github.com/plexusone/omnivault v0.5.0 h1:7oZwP1KNS+XQ1ksoZoKnLS9PV0TQ93b5NEuxO0T
 github.com/plexusone/omnivault v0.5.0/go.mod h1:LQNyI6gTygb3ht4yLhLpHIdcOVALOTGnaO1oJn6+2KE=
 github.com/plexusone/posture v0.3.0 h1:NsaufOi5XiTzuP2hlD8/ohp3jtLfOyGgKK4z4TsXdbY=
 github.com/plexusone/posture v0.3.0/go.mod h1:z4WsvCbzGusLzJGBFZAApp3sV0juEGb1FoB4lLre9K4=
-github.com/plexusone/vaultguard v0.3.0 h1:auQ3FOvlBDzFZEDrJlaEfibnJQQd900VrvrMYeoGq8s=
-github.com/plexusone/vaultguard v0.3.0/go.mod h1:6IVVmuWD7vYbv2973dgdDt7SLm7gCgGtFDcs97Hv8YI=
+github.com/plexusone/vaultguard v0.3.1 h1:slAiwe8UIHL0SZ4NTtVfaQYU+ieRsiUOGAa6uTLmBAc=
+github.com/plexusone/vaultguard v0.3.1/go.mod h1:d7YpJ/MnJ5u4cFwrVknWfycgBR+oDlay/N2Xn7h0r30=
 github.com/pmezard/go-difflib v1.0.0 h1:4DBwDE0NGyQoBHbLQYPwSUPoCMWR5BEzIk/f1lZbAQM=
 github.com/pmezard/go-difflib v1.0.0/go.mod h1:iKH77koFhYxTK1pcRnkKkqfTogsbg7gZNVY4sRDYZ/4=
 github.com/power-devops/perfstat v0.0.0-20240221224432-82ca36839d55 h1:o4JXh1EVt9k/+g42oCprj/FisM4qX9L3sZB3upGN2ZU=

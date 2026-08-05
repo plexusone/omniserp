@@ -6,7 +6,7 @@ require (
 	github.com/jessevdk/go-flags v1.6.1
 	github.com/modelcontextprotocol/go-sdk v1.7.0
 	github.com/plexusone/omni-keyring v0.3.0
-	github.com/plexusone/omniskill v0.10.0
+	github.com/plexusone/omniskill v0.11.0
 	github.com/plexusone/vaultguard v0.3.1
 )
 
@@ -32,7 +32,7 @@ require (
 	github.com/yusufpapurcu/wmi v1.2.4 // indirect
 	github.com/zalando/go-keyring v0.2.8 // indirect
 	golang.org/x/oauth2 v0.36.0 // indirect
-	golang.org/x/sync v0.21.0 // indirect
-	golang.org/x/sys v0.46.0 // indirect
+	golang.org/x/sync v0.22.0 // indirect
+	golang.org/x/sys v0.47.0 // indirect
 	golang.org/x/time v0.15.0 // indirect
 )
